@@ -1,0 +1,29 @@
+<div class="modal fade show" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="false" [ngStyle]="{'display': showmodal ? 'block' : 'none'}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel">Añadir campaña</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="dispatchCloseEvent()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <input type="text" class="form-control mb-4" aria-describedby="titulo" placeholder="Titulo" #title (keyup)="setValue('title', title.value)">
+            <input type="text" class="form-control mb-4" aria-describedby="descripción" placeholder="Descripción" #description (keyup)="setValue('description', description.value)">
+            <label>Fecha de Inicio</label>
+            <input type="date" class="form-control mb-4" aria-describedby="fecha de inicio" #startDate (change)="setValue('startDate', startDate.value)">
+            <label>Fecha de Fin</label>
+            <input type="date" class="form-control mb-4" aria-describedby="fecha de fin" #endDate (change)="setValue('endDate', endDate.value)">
+            <select class="form-control" #status (change)="setValue('status', status.value)">
+              <option disabled value='none'>Estatus</option>
+              <option value='active'>Activo</option>
+              <option value='inactive'>Terminado</option>
+            </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="dispatchCloseEvent()">Cerrar</button>
+          <button type="button" class="btn btn-primary" (click)="dispatchSubmit($event)">Añadir</button>
+        </div>
+      </div>
+    </div>
+  </div>

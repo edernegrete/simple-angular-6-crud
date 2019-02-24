@@ -1,0 +1,7 @@
+nav {
+  background-color: var(--dark);
+  padding: 1rem;
+}
+.nav-item {
+  color: var(--white)
+}

@@ -1,0 +1,27 @@
+<table class="table table-hover table-bordered">
+    <div *ngIf="data && data.length > 0; else empty">
+      <div>
+          <thead>
+              <tr>
+                <th *ngFor="let name of headers">
+                  {{name}}
+                </th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let row of data">
+                <td>{{row.title}}</td>
+                <td>{{row.description}}</td>
+                <td>{{row.startDate}}</td>
+                <td>{{row.endDate}}</td>
+                <td [ngClass]="row.status ? 'active' : 'inactive'" class="white">{{row.status ? 'Activo' : 'Terminado'}}</td>
+                <td class="d-flex justify-content-around">
+                  <span (click)="dispatchEdit(row.id)">✏️</span>
+                  <span (click)="dispatchDelete(row.id)">❌</span>
+                </td>
+              </tr>
+          </tbody>
+      </div>
+    </div>
+    <ng-template #empty>No hay ninguna campaña</ng-template>
+</table>

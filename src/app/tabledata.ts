@@ -1,0 +1,1 @@
+export const Headers = ['Nombre', 'Descripción', 'Fecha de inicio', 'Fecha de fin', 'Status', 'Acciones']
