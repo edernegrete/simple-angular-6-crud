@@ -1,5 +1,5 @@
 {
-  "name": "hoopa-crud",
+  "name": "Simple CRUD",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
